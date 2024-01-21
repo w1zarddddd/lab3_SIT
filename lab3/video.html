@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="assets/CSS/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <nav>
+                    <a class="nav__link" href="index.html">Lab1</a>
+                </nav>
+                <nav>
+                    <a class="nav__link" href="video.html">Video</a>
+                    <a class="nav__link" href="pictures.html">Pictures</a>
+                    <a class="nav__link" href="audio.html">Audio</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="intro">
+        <div class="container">
+            <div class="intro__inner"></div>
+            <h1 class="intro__title">Video</h1>
+            <!-- 1 video -->
+           <!-- Добавьте следующий код в ваш HTML -->
+    <div id="video-container" class="table-container">
+    <div class="CypherVideo">
+        <video width="3%" height="10%" controls>
+            <source src="assets/videos/cypher.mp4" type="video/mp4">
+            Ваш браузер не поддерживает видео.
+        </video>
+    </div>
+    <div class="SovaVideo">
+                <video width="3%" height="10%" controls>
+                    <source src="assets/videos/Shockdarts.mp4" type="video/mp4">
+            Ваш браузер не поддерживает видео.
+                </video>
+            </div>
+        </div>
+
+
+            <!-- Кнопка для открытия видео -->
+            <button class="play-button" onclick="openVideo()">Поднять мотивацию</button>
+
+            <!-- Модальное окно для видео -->
+            <div id="videoModal" class="modal">
+                <span class="close" onclick="closeVideoModal()">&times;</span>
+                <video id="motivationVideo" width="560" height="315" controls onended="closeVideoModal()">
+                    <source src="/assets/videos/motivation1.mp4" type="video/mp4">
+                    Ваш браузер не поддерживает видео.
+                </video>
+                
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openVideo() {
+            // Открываем модальное окно
+            var modal = document.getElementById('videoModal');
+            modal.style.display = 'block';
+
+            // Воспроизводим видео
+            var video = document.getElementById('motivationVideo');
+            video.play();
+        }
+
+        function closeVideoModal() {
+            // Закрываем модальное окно
+            var modal = document.getElementById('videoModal');
+            modal.style.display = 'none';
+
+            // После закрытия возвращаемся на страницу video.html
+            window.location.href = 'video.html';
+        }
+    </script>
+
+
+
+</body>
+
+</html>
